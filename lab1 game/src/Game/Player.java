@@ -1,6 +1,6 @@
 package Game;
 
-public abstract class Player extends Board {
+public abstract class Player{
     protected String userID;
     
     Player(String userID){
