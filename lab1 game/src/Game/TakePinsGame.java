@@ -8,9 +8,9 @@ public class TakePinsGame {
         Board b = new Board();
         b.setUp(10);
 
-        HumanPlayer p = new HumanPlayer("Benne");
-        ComputerPlayer c = new ComputerPlayer("datorN");
-        ComputerPlayer2 c2 = new ComputerPlayer2("datorN2");
+        Player p = new HumanPlayer("Benne");
+        Player c = new ComputerPlayer("datorN");
+        Player c2 = new ComputerPlayer2("datorN2");
 
         while (b.getNoPins() > 0) {
             if (b.getNoPins() > 0) {

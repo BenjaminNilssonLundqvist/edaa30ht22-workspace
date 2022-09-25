@@ -14,7 +14,7 @@ public class UserInterface {
 
 	}
 	
-	public static int askForInt(String msg) { // Tar hand om icke-korrekt data
+	public static int askForInt(String msg) { 
 		
 		while (!(msg == null) && !(msg.matches("[0-9]+"))) { // Kollar om man klickar i nått annat än siffror. ( "" eller Cancel )
 			JOptionPane.showMessageDialog(null, "Du måste välja 1 eller 2", "ERROR", JOptionPane.ERROR_MESSAGE );
@@ -22,7 +22,7 @@ public class UserInterface {
 			
 		}
 		
-		if(msg == null) { //Ifall man klickar avbryt
+		if(msg == null) { //Avbryt
 			JOptionPane.showMessageDialog(null, "Avslutas", "Cancel", JOptionPane.ERROR_MESSAGE);
 			System.exit(0);
 		}
