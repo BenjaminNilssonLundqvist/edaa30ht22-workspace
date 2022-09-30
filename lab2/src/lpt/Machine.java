@@ -17,7 +17,7 @@ public class Machine {
 	/** Tilldelar maskinen jobbet j. */
 	public void assignJob(Job j) {
 		jobs.add(j);
-		scheduledTime = j.getTime();
+		this.scheduledTime = j.getTime(); // Ändra till this.scheduledTime
 	}
 	
 	/** Tar bort alla jobb från maskinen. */
@@ -32,14 +32,14 @@ public class Machine {
 		if (jobs.isEmpty()) {
 			return null;
 		}
-		scheduledTime -= jobs.get(0).getTime();
+		this.scheduledTime -= jobs.get(0).getTime();
 		return jobs.remove(0);
 	}
 	
 	/** Tar reda på den totala schemalagda tiden för 
 	    maskinens jobb. */
 	public int getScheduledTime() {
-		return scheduledTime;
+		return this.scheduledTime;
 	}
 	
 	/** Returnerar en sträng som innehåller maskinens nr,  

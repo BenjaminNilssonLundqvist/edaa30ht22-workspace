@@ -13,12 +13,12 @@ public class Job {
 	
 	/** Returnerar jobbets tidsåtgång. */
 	public int getTime() {
-		return time;
+		return this.time;
 	}
 	
 	/** Returnerar en sträng som representerar jobbet
 	 	på formen namn (tidsåtgång). */
 	public String toString() {
-		return name  + " " + time;
+		return name  + " " + this.time;
 	}	
 }
