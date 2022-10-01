@@ -17,7 +17,7 @@ public class Machine {
 	/** Tilldelar maskinen jobbet j. */
 	public void assignJob(Job j) {
 		jobs.add(j);
-		this.scheduledTime = j.getTime(); // Ändra till this.scheduledTime
+		this.scheduledTime += j.getTime(); // Ändra till this.scheduledTime
 	}
 	
 	/** Tar bort alla jobb från maskinen. */
