@@ -3,7 +3,9 @@ package textproc;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.Scanner;
+import java.util.Set;
 
 public class Holgersson {
 
@@ -14,10 +16,18 @@ public class Holgersson {
 
 	public static void main(String[] args) throws FileNotFoundException {
 		ArrayList<TextProcessor> list = new ArrayList<TextProcessor>();
+		Set<String> stopwords = new HashSet<>();
+
+		Scanner scan = new Scanner(new File("/Users/benjamin/edaa30ht22-workspace/edaa30ht22-workspace-2/lab2/undantagsord.txt"));
+        while(scan.hasNext()){
+            String stopword=scan.next().toLowerCase();
+            stopwords.add(stopword);
+        }
 
 		list.add(new SingleWordCounter("nils"));
 		list.add(new SingleWordCounter("norge"));
 		list.add(new MultiWordCounter(REGIONS));
+		list.add(new GeneralWordCounter(stopwords));
 
 		Scanner s = new Scanner(
 				new File("/Users/benjamin/edaa30ht22-workspace/edaa30ht22-workspace-1/lab2/nilsholg.txt"));
