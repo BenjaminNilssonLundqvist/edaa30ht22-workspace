@@ -17,6 +17,7 @@ public class Holgersson {
 
 		list.add(new SingleWordCounter("nils"));
 		list.add(new SingleWordCounter("norge"));
+		list.add(new MultiWordCounter(REGIONS));
 
 		Scanner s = new Scanner(
 				new File("/Users/benjamin/edaa30ht22-workspace/edaa30ht22-workspace-1/lab2/nilsholg.txt"));
@@ -28,6 +29,7 @@ public class Holgersson {
 			for (TextProcessor t : list) {
 				t.process(word);
 			}
+
 		}
 
 		s.close();
