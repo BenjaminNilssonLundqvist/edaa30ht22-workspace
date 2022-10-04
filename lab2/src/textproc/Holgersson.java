@@ -15,6 +15,7 @@ public class Holgersson {
 			"öland", "östergötland" };
 
 	public static void main(String[] args) throws FileNotFoundException {
+		long t0=System.nanoTime();
 		ArrayList<TextProcessor> list = new ArrayList<TextProcessor>();
 		Set<String> stopwords = new HashSet<>();
 
@@ -46,5 +47,6 @@ public class Holgersson {
 		for (TextProcessor t : list) {
 			t.report();
 		}
+		System.out.println("Tid: "+(System.nanoTime()-t0)/1000000+" ms");
 	}
 }

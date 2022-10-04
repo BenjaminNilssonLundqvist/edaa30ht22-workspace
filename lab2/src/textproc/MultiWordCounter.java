@@ -21,7 +21,7 @@ public class MultiWordCounter implements TextProcessor{
     @Override
     public void process(String w){
         if(Wordmap.containsKey(w)){
-            this.Wordmap.put(w,Wordmap.get(w)+1);
+            Wordmap.put(w,Wordmap.get(w)+1);
 
 
         }
