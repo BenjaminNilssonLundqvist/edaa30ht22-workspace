@@ -25,6 +25,8 @@ public class BookReaderController {
         JRadioButton b1 = new JRadioButton("Alfabetiskt");  //V4
         JRadioButton b2 = new JRadioButton("Antal ggr");
         ButtonGroup group = new ButtonGroup();
+        b1.setBackground(Color.green);
+        b2.setBackground(Color.red);
         group.add(b1);
         group.add(b2);
         
