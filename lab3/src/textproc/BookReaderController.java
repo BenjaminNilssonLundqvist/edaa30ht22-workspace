@@ -21,8 +21,12 @@ public class BookReaderController {
         JFrame frame = new JFrame(title);
         JPanel panel = new JPanel();
         JScrollPane scrollPane = new JScrollPane(myList);
+        
         JRadioButton b1 = new JRadioButton("Alfabetiskt");  //V4
         JRadioButton b2 = new JRadioButton("Antal ggr");
+        ButtonGroup group = new ButtonGroup();
+        group.add(b1);
+        group.add(b2);
         
         // Hur framen ska stängas
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
