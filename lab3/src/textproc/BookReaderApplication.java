@@ -16,15 +16,15 @@ public class BookReaderApplication {
         ArrayList<TextProcessor> list = new ArrayList<TextProcessor>();
         GeneralWordCounter gwc= new GeneralWordCounter(stopwords);
 
-        Scanner scan = new Scanner(new File("/Users/benjamin/edaa30ht22-workspace/edaa30ht22-workspace-2/lab2/undantagsord.txt"));
+        Scanner scan = new Scanner(new File("C:/Users/benja/Desktop/edaa30ht22-workspace/edaa30ht22-workspace-1/lab3/undantagsord.txt"));
         while (scan.hasNext()) {
             String stopword = scan.next().toLowerCase();
             stopwords.add(stopword);
         }
-
+// ändra till mac! // och filepath
         Scanner s = new Scanner(
-                new File("/Users/benjamin/edaa30ht22-workspace/edaa30ht22-workspace-1/lab2/nilsholg.txt"));
-        s.findWithinHorizon("\uFEFF", 1);
+                new File("lab3/nilsholg.txt"));
+        s.findWithinHorizon("/uFEFF", 1);
         s.useDelimiter("(\\s|,|\\.|:|;|!|\\?|'|\\\")+");
 
         list.add(gwc);
