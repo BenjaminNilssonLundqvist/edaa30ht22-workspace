@@ -1,5 +1,7 @@
 package mountain;
 
+import fractal.TurtleGraphics;
+
 public class Point {
 	private int x, y;
 
