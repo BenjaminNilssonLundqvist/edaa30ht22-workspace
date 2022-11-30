@@ -43,37 +43,34 @@ public class BinarySearchTree<E> {
 			size++;
 			return true;
 		}
-		return add(n, x);
+		return add(root, x);
 
 	}
 
 	private boolean add(BinaryNode<E> node, E x) {
-		var compareValue = ccomparator.compare(node.element, x);
+
+		int compareValue = ccomparator.compare(node.element, x);
 		if (compareValue == 0) {
 			return false; // inga dubletter
-		}
-		if (compareValue > 0) { // om nod värdet är större än x
+		} else if (compareValue > 0) { // om nod värdet är större än x
 			if (node.right == null) {
 				node.right = new BinaryNode<E>(x);
 				size++;
 				return true;
 			} else {
 				return add(node.right, x);
+
 			}
 
-		}
-		if (compareValue < 0) { // om nod värdet är mindre än x
-			if (node.left == null) {
-				node.left = new BinaryNode<E>(x);
-				size++;
-				return true;
-			} else {
-				return add(node.left, x);
-			}
-
+		} // om nod värdet är mindre än x
+		if (node.left == null) {
+			node.left = new BinaryNode<E>(x);
+			size++;
+			return true;
+		} else {
+			return add(node.left, x);
 		}
 
-		return false;
 	}
 
 	/**
@@ -112,8 +109,8 @@ public class BinarySearchTree<E> {
 	 * Removes all of the elements from this list.
 	 */
 	public void clear() {
-		root=null;
-		size=0;
+		root = null;
+		size = 0;
 
 	}
 
@@ -121,17 +118,18 @@ public class BinarySearchTree<E> {
 	 * Print tree contents in inorder.
 	 */
 	public void printTree() {
-		if(root==null){
+		if (root == null) {
 			System.out.println("Empty tree");
-		}else{
+		} else {
 			printTree(root);
 		}
 
 	}
-	private void printTree(BinaryNode<E> n){
-		if(n!=null){
+
+	private void printTree(BinaryNode<E> n) {
+		if (n != null) {
 			printTree(n.left);
-			System.out.println(" "+ n.element);
+			System.out.println(" " + n.element);
 			printTree(n.right);
 
 		}
@@ -170,6 +168,15 @@ public class BinarySearchTree<E> {
 		private BinaryNode(E element) {
 			this.element = element;
 		}
+	}
+
+	public static void main(String[] args) {
+		BinarySearchTree<Integer> bt1 = new BinarySearchTree<>();
+		bt1.add(10);
+		bt1.add(12);
+		bt1.add(9);
+		System.out.println(bt1.size());
+
 	}
 
 }
