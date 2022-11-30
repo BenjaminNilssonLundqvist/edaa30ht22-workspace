@@ -83,17 +83,15 @@ public class BinarySearchTree<E> {
 	}
 
 	private int height(BinaryNode<E> n) {
-		int count = 0;
-		if (root == null) {
+		if (n == null) {
 			return 0;
+		} else{
+			int left= height(n.left);
+			int right=height(n.right);
+			return Math.max(left, right)+1;  //fattar inte detta
 		}
-		while (n.left != null && n.right != null) {
-			count++;
-			height(n.left);
-			height(n.right);
-
-		}
-		return count;
+		
+		
 	}
 
 	/**
@@ -172,10 +170,12 @@ public class BinarySearchTree<E> {
 
 	public static void main(String[] args) {
 		BinarySearchTree<Integer> bt1 = new BinarySearchTree<>();
-		bt1.add(10);
-		bt1.add(12);
-		bt1.add(9);
-		System.out.println(bt1.size());
+		for(int i=1;i<=10;i++){
+			bt1.add(i);
+		}
+		System.out.println(bt1.height());
+
+
 
 	}
 

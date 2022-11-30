@@ -32,6 +32,12 @@ import bst.BinarySearchTree;
 
     @Test
      public void testHeight(){
+       for(int i=1;i<=10;i++){
+        bt1.add(i);
+       }
+       assertEquals(10, bt1.height());
+       
+        
         
     }
     @Test
