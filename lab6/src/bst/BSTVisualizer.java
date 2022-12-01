@@ -1,6 +1,7 @@
 package bst;
 
 import java.awt.Color;
+import java.util.Random;
 
 import bst.BinarySearchTree.BinaryNode;
 import drawing.*;
@@ -105,6 +106,18 @@ public class BSTVisualizer {
 			this.node = node;
 		}
 		
+	}
+	public static void main(String[] args) {
+		Random rand= new Random();
+		
+		BinarySearchTree<Integer> bst = new BinarySearchTree<>();
+		
+		for(int i=1;i<=10;i++){
+			bst.add(rand.nextInt());
+		}
+		
+		BSTVisualizer bstV= new BSTVisualizer("King", 300, 400);
+		bstV.drawTree(bst);
 	}
 
 }
